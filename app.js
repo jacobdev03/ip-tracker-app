@@ -1,19 +1,15 @@
+let map = L.map("map").setView([37.8, -96], 4);
+L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 18,
+}).addTo(map);
+
 const LeafIcon = L.Icon.extend({
   options: {
     iconSize: [50, 60],
     iconAnchor: [22, 94],
   },
 });
-
-const map = L.map("map").setView([51.505, -0.09], 13);
 const popupImg = new LeafIcon({ iconUrl: "./images/icon-location.svg" });
-
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
-
-L.marker([51.5, -0.09], { icon: popupImg }).addTo(map).openPopup();
 
 const search = document.querySelector(".search");
 const ipval = document.querySelector("#ip-value");
@@ -38,7 +34,22 @@ async function getIp(ip) {
     locationIp.textContent = `${respData.location.city}`;
     timezone.textContent = `${respData.location.timezone}`;
     isp.textContent = `${respData.isp}`;
+
+    makeMap(respData.location.lat, respData.location.lng);
   } catch (error) {
     console.log(error);
   }
+}
+
+function makeMap(lat, lng) {
+  let osmLayer = new L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  });
+
+  let marker = new L.marker([lat, lng], { icon: popupImg });
+
+  map.setView(new L.LatLng(lat, lng), 13);
+  map.addLayer(osmLayer);
+  map.addLayer(marker);
 }
