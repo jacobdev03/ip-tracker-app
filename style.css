@@ -65,6 +65,7 @@ nav form button {
 }
 
 .card-element {
+  position: relative;
   padding: 0.7em;
   display: flex;
   flex-direction: column;
@@ -95,7 +96,9 @@ nav form button {
   font-weight: 500;
 }
 
-.map {
-  background-color: gray;
-  height: 70vh;
+#map {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
