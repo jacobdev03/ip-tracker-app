@@ -10,7 +10,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    IP Address Tracker Search for any IP address or domain IP Address Location Timezone UTC
+    <nav>
+      <h1>IP Address Tracker</h1>
+    </nav>
+    <form class="search">
+      <input type="text" placeholder="Search for any IP address or domain" id="ip-value" />
+      <button id="submit-btn"></button>
+    </form>
+    <div class="card-element">
+      <div>
+        <p>IP ADDRESS</p>
+        <p id="ip-address">192.212.174.101</p>
+      </div>
+      <div>
+        <p>LOCATION</p>
+        <p id="location">Brooklyn, NY 10001</p>
+      </div>
+      <div>
+        <p>TIMEZONE</p>
+        <p id="timezone">UTC -05:00</p>
+      </div>
+      <div>
+        <p>ISP</p>
+        <p id="isp">SpaceX Starlink</p>
+      </div>
+    </div>
+    <div class="map"></div>
+    Search for any IP address or domain IP Address Location Timezone UTC
     <!-- add offset value dynamically using the API -->
     ISP
   </body>
