@@ -13,19 +13,16 @@
 
 ## Overview
 
-### The challenge
-
 Users should be able to:
 
 - View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements on the page
-- See their own IP address on the map on the initial page load
+- See their own IP address on the map
 - Search for any IP addresses or domains and see the key information and location
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/jacobdev03/ip-tracker-app
+- Live Site URL: https://jacobdev03.github.io/ip-tracker-app/
 
 ## My process
 
@@ -34,10 +31,4 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS
 - Flexbox
-- CSS Grid
 - Vanilla JavaScript
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
